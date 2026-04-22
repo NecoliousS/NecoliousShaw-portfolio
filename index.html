@@ -11,11 +11,13 @@
 
     <nav>
         <div class="container">
-            <h3 class="logo">Necolious Shaw</h3>
+            <a href="index.html" class="logo">Necolious Shaw</a>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="sites.html">Sites</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="ios-dev.html">iOS Dev</a></li>
             </ul>
         </div>
     </nav>
@@ -27,21 +29,19 @@
             <p class="description">
                 Incoming software engineer building iOS apps, web platforms, and developer tools. Currently obsessed with clean code, GitHub API integrations, and intuitive design.
             </p>
-
             <div class="cta-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="projects.html" class="btn primary">View My Work</a>
                 <a href="https://github.com/NecoliousS" class="btn secondary" target="_blank">GitHub</a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="about">
+    <section class="about">
         <div class="container">
             <h2>About Me</h2>
             <p>
                 I'm an incoming freshman at UConn Stamford studying Computer Science. I started coding in high school building iOS apps in Xcode and have since expanded into full-stack web development.
             </p>
-
             <div class="skills">
                 <h3>Tech Stack</h3>
                 <div class="skill-tags">
@@ -56,138 +56,10 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-
-            <div class="project-grid">
-
-                <!-- CodeReview Roulette -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>CodeReview Roulette</h3>
-                        <p>
-                            A peer-to-peer code review platform built entirely on GitHub infrastructure. Users submit code via GitHub Issues/Gists, browse random code to review, and provide feedback. Features automated matching and real-time dashboards.
-                        </p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>GitHub API</span>
-                            <span>GitHub Actions</span>
-                            <span>Web App</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://necoliouss.github.io/codereview-roulette/" class="btn small" target="_blank">Live Demo</a>
-                            <a href="https://github.com/necoliouss/codereview-roulette" class="btn small secondary" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NBA Stat Estimator -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>NBA Stat Estimator</h3>
-                        <p>
-                            NBA analytics tool with 82-game season projections, player rankings, and head-to-head stat comparisons. Built with vanilla JavaScript.
-                        </p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>Analytics</span>
-                            <span>Web App</span>
-                            <span>UI/UX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://necoliouss.github.io/nba-stat-estimator/" class="btn small" target="_blank">Live Demo</a>
-                            <a href="https://github.com/necoliouss/nba-stat-estimator" class="btn small secondary" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PetSwipe - NOW LIVE -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>PetSwipe</h3>
-                        <p>
-                            Tinder-style pet adoption matching app. Features smart swiping interface, matching algorithm quiz, AI pet assistant, and community Q&A. Built as a demo for an iOS app currently in development.
-                        </p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>UI/UX</span>
-                            <span>Mobile Web</span>
-                            <span>iOS Preview</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://necoliouss.github.io/petswipe-demo/" class="btn small" target="_blank">Live Demo</a>
-                            <a href="https://github.com/necoliouss/petswipe-demo" class="btn small secondary" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HabitTracker -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>HabitTracker</h3>
-                        <p>
-                            Universal habit tracker with localStorage persistence, streak counters, and data visualization.
-                        </p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>LocalStorage</span>
-                            <span>Chart.js</span>
-                            <span>UI/UX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://necoliouss.github.io/Habit-tracker/" class="btn small" target="_blank">Live Demo</a>
-                            <a href="https://github.com/necoliouss/Habit-tracker" class="btn small secondary" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Weather Dashboard -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Weather Dashboard</h3>
-                        <p>
-                            Real-time weather data with search functionality. Built with JavaScript and OpenWeather API.
-                        </p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>API</span>
-                            <span>CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://necoliouss.github.io/weather-dashboard/" class="btn small" target="_blank">Live Demo</a>
-                            <a href="https://github.com/necoliouss/weather-dashboard" class="btn small secondary" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NOVA VE Website -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>NOVA VE Website</h3>
-                        <p>
-                            Business website built for Virtual Enterprise class with branding and UX design.
-                        </p>
-                        <div class="project-tags">
-                            <span>Web Design</span>
-                            <span>UI/UX</span>
-                            <span>Product</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://sites.google.com/farmingdaleschools.org/nova-ve/home" class="btn small" target="_blank">View Site</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
+    <section class="contact">
         <div class="container">
             <h2>Get In Touch</h2>
             <p>I'm currently looking for internship opportunities for Summer 2026. Let's connect!</p>
-
             <div class="contact-links">
                 <a href="mailto:Necolious23@gmail.com" class="btn primary">Email Me</a>
                 <a href="https://linkedin.com/in/necolious-shaw-442873396/" class="btn secondary" target="_blank">LinkedIn</a>
