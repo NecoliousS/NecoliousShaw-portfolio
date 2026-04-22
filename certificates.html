@@ -6,6 +6,72 @@
     <title>Certificates | Necolious Shaw</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== LIGHTBOX STYLES ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s;
+            z-index: 1001;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lightbox-close:hover {
+            color: #64ffda;
+        }
+
+        .lightbox-caption {
+            color: #ccd6f6;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Make cert images clickable */
+        .cert-images img {
+            cursor: zoom-in;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cert-images img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+        }
+    </style>
 </head>
 <body>
 
@@ -38,8 +104,8 @@
                     <h3>Accounting 1</h3>
                     <p class="cert-date">April 22, 2026</p>
                     <div class="cert-images">
-                        <img src="images/cert-accounting-1.jpg" alt="Accounting 1 Certificate Page 1">
-                        <img src="images/cert-accounting-2.jpg" alt="Accounting 1 Certificate Page 2">
+                        <img src="images/cert-accounting-1.jpg" alt="Accounting 1 Certificate Page 1" onclick="openLightbox(this)">
+                        <img src="images/cert-accounting-2.jpg" alt="Accounting 1 Certificate Page 2" onclick="openLightbox(this)">
                     </div>
                 </div>
 
@@ -48,8 +114,8 @@
                     <h3>Marketing 1</h3>
                     <p class="cert-date">April 21, 2026</p>
                     <div class="cert-images">
-                        <img src="images/cert-marketing-1.jpg" alt="Marketing 1 Certificate Page 1">
-                        <img src="images/cert-marketing-2.jpg" alt="Marketing 1 Certificate Page 2">
+                        <img src="images/cert-marketing-1.jpg" alt="Marketing 1 Certificate Page 1" onclick="openLightbox(this)">
+                        <img src="images/cert-marketing-2.jpg" alt="Marketing 1 Certificate Page 2" onclick="openLightbox(this)">
                     </div>
                 </div>
 
@@ -62,6 +128,41 @@
             <p>&copy; 2026 Necolious Shaw. Built with HTML & CSS.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <img src="" alt="Enlarged certificate" class="lightbox-img" id="lightbox-img">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+
+    <!-- Lightbox JavaScript -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(img) {
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target === lightbox || event.target.classList.contains('lightbox-close') || event.type === 'keydown') {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox(event);
+            }
+        });
+    </script>
 
 </body>
 </html>
